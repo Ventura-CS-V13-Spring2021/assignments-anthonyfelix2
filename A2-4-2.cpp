@@ -3,7 +3,7 @@
 #include <cstdlib>
 #include <ctime>
 using namespace std;
-// if there is anything i can do for efficiency in my design for this lab??
+// is there is anything i can do for efficiency in my design for this lab??
 
 int main()
 {
