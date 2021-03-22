@@ -5,6 +5,7 @@
 #include <ctime>
 using namespace std;
 // tried doing without creating a file but i cannot figure it out
+// this is the best i can do taking too long on this problem =
 int main()
 {
   int rdnum, max, P, S;
@@ -22,26 +23,30 @@ int main()
 
 	rdmfile.close();
 
-  ifstream 	rdmfile ;
+  ifstream 	rdomfile ;
 
-	rdmfile.open("rdnum.txt Q");
+	rdomfile.open("rdnum.txt Q");
 
-  while( rdmfile  >> rdnum )
+  while( rdomfile  >> rdnum )
   {
-    P++;
 if(max == 0)
-   {
+    {
     max = rdnum;
-   }
+    }
 if (P>=1)
-{
+    {
   if (rdnum>max)
+  {
   S = rdnum;
-  else break;
-}
+  break;
+  }
+    }
+  P++;
 cout << rdnum << endl;
   }
 cout << S;
+if (S==0)
+cout<< "there was never a number larger than the previous";
 
-rdmfile.close();
+rdomfile.close();
 }
