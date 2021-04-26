@@ -1,34 +1,59 @@
 #include <iostream>
-#include <iomanip>
 #include <fstream>
-#include <cstdlib>
-#include <ctime>
 using namespace std;
-// best i can 
+
 int main()
 {
-  int E_ID;
-  double salary;
-  string E_N, D_N;
-  string " ";
+    int total_num;
+    string deptname;
+    string empname;
+    double salary;
+    int empid, number;
+    ofstream ofs;
+    double sum, avg;
+    ifstream ifs;
 
-  ofstream file;
-  file.open("employee.txt");
+    ofs.open("employee.txt");
+    if (ofs.fail())
+    {
+        cerr << "File Op[en Error\n";
+        exit(0);
+    }
+    cout << "Enter the number of employees : ";
+    cin >> total_num;
+    ofs << total_num << endl;
+    for (int i = 0; i < total_num; i++)
+    {
+        cout << "Enter the emp id : ";
+        cin >> empid;
+        cout << "Enter the emp name : ";
+        cin >> empname;
+        cout << "Enter the dept name : ";
+        cin >> deptname;
+        cout << "Enter the salary : ";
+        cin >> salary;
+        ofs << empid << " " << empname << " " << deptname << " " << salary << endl;
+    }
+    ofs.close();
   
-  cout << "Please enter the employee ID, employee name, department name and salary. Please type in quit when done" << endl;
-  while(cin >> E_ID >> E_N >> D_N >> salary)
-  file << E_ID <<" " << E_N << " "<< D_N <<" " << salary;
-
-  file.close();
-
-  ifstream file1;
-  file1.open ("employee.txt");
-
-  cout << "employee ID" << "employee name" << "department name" << "salary";
-  while(file1 >> E_ID >> " " >> E_N >> " " >> D_N >> " ">> salary)
-  cout << E_ID << E_N << D_N << salary;
-  
-
-
-
+  ifs.open("employee.txt");
+    if (ifs.fail())
+    {
+        cerr << "File Open Error \n";
+        exit(0);
+    }
+    ifs >> total_num;
+    sum = 0;
+    for (int i = 0; i < total_num; i++)
+    {
+        ifs >> empid >> empname >> deptname >> number;
+        cout << " emp id : " << empid << "\t";
+        cout << " emp name : " << empname << "\t";
+        cout << " dept name : " << deptname << "\t";
+        cout << " salary : " << number << "\n";
+        sum += number;
+    }
+    avg = sum / total_num;
+    cout << " Sum : " << sum << "\t"
+         << "Avg : " << avg << endl;
 }
