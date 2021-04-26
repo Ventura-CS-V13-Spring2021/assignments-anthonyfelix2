@@ -1,17 +1,18 @@
 #include <iostream>
 #include <fstream>
+#include <cstdlib>
 using namespace std;
 
-double sum(int , int )
+int sum(int , int );
 
-double avg(int , int )
-
+int avg(int , int );
+//best i can do I do not know how to make this run. Wasted one hour here got to move on.
 int main()
 {
   ifstream ifs;
   int score1, score2, students;
   string name;
-  double sum, avg;
+  double sum_, avg_;
   
   ifs.open("students.txt");
     if (ifs.fail())
@@ -22,21 +23,23 @@ int main()
 
   while(ifs >> name >> score1 >> score2)
   {
-    cout << name "\t" << score1 "\t" << score2;
-    result1 = sum(score1, score2);
-    result2 = avg(score1, score2);
+    cout << name << "\t"; 
+    cout << score1 << "\t";
+    cout << score2;
+   int result1 = sum(score1, score2);
+   int result2 = avg(score1, score2);
     cout << "Sum : " << result1 << "Average: " << result2 << endl;
   }
 
 }
 
-double sum(int a, int b)
+int sum(int a, int b)
 {
   int result = a + b;
   return result;
 }
 
-double avg(int a, int b)
+int avg(int a, int b)
 {
   int result = (a + b)/2;
   return result;
