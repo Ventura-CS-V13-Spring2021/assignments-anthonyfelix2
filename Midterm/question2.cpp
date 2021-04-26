@@ -13,8 +13,21 @@ int main ()
 
 Int isGreater(int n);
 {
-  int prec;
-  if 
+  static int i, prec;
+  i = 0;
+  if (i = 0)
+  {
+    prec = n;
+    i++;
+    continue;
+  }
+  if (prec < n)
+  {
+    
+  }
+
+  else
+  prec = n
 
 }
 
