@@ -15,7 +15,7 @@ int main ()
     ofs.open("numbers.txt");
     if (ofs.fail())
     {
-        cerr << "File Op[en Error\n";
+        cerr << "File Open Error\n";
         exit(0);
     }
   for (int z = 0; z < N; z++)
