@@ -36,18 +36,15 @@ int isGreater(int n)
   
       if (i == 0){
             prec = n;
-            i++;
+            i += 1;
             return 0;
-      }
 
-     else if (prec < n)
-      {
+      }
+      
+     if (prec < n){
         return 1;
       }
       prec = n;
-      else return 0;
-
-
 }
 
 int getRdnum(void)
