@@ -30,23 +30,27 @@ int main ()
 
 int isGreater(int n)
 {
-  static int i, prec;
+  static int i;
+  static int prec;
   i = 0;
-  if (i == 0)
-  {
-    prec = n;
-    i++;
-  }
-  if (prec < n)
-  {
-    return 1;
-  }
-  else if (prec > n)
-  {
-    return 0;
-  }
-  prec = n;
   
+      if (i == 0){
+            prec = n;
+            i++;
+            return 0;
+      }
+
+     else if (prec < n)
+      {
+        return 1;
+      }
+      prec = n;
+      else return 0;
+
+    
+    
+  
+
 
 }
 
