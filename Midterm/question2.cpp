@@ -47,10 +47,6 @@ int isGreater(int n)
       prec = n;
       else return 0;
 
-    
-    
-  
-
 
 }
 
