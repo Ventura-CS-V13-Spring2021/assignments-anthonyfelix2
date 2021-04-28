@@ -7,14 +7,22 @@ int get_Rdnum(int &, int &, int &);
 int findMin(int, int, int);
 int findMax(int, int, int);
 int getdifference(int, int);
+void filewrite(int);
+
 int main()
 {
   get_Rdnum(A,B,C);
-  cout << A << B << C;
+  cout << "first random number is:" << A << endl;
+  cout << "second random number is:" << B << endl;
+  cout << "third random number is:" << C << endl;
   Max = findMax(A, B, C);
   Min = findMin(A, B, C);
   diff = getdifference(Max, Min);
-  cout << Max << Min;
+  cout << "the maximum of the three numbers is: " << Max << endl;
+  cout << "the minimum of the three numbers is: " << Min << endl;
+  cout << "the difference of the three numbers is: " << diff << endl;
+
+  filewrite(diff);
 }
 int get_Rdnum(int &a, int &b, int &c)
 {
@@ -59,4 +67,21 @@ int getdifference(int k, int l)
   int difference;
   difference = k - l ;
   return difference;
+}
+
+void filewrite(int m)
+{
+  ofstream ofs;
+  ofs.open("question3.txt");
+    if (ofs.fail())
+    {
+        cerr << "File Open Error\n";
+        exit(0);
+    }
+    if (m >= 3)
+    ofs << m << endl;
+    else
+    exit(0);
+
+    ofs.close();
 }
