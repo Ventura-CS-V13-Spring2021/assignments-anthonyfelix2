@@ -13,5 +13,14 @@ int main()
     } 
     cout << sum;
 
-    
+    cout<<endl;
+
+    for (int i=0; i<10; i++){
+      diff[i] = sum - numbers[i];
+      cout<< " "<< diff[i];
+        }
+   cout << endl;
+   
+  for (int i=0; i<10; i++){ cout << " " << numbers[i];}
+
 }
